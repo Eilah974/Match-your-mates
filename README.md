@@ -5,8 +5,12 @@ This is the apotheosis project (vocationnal training project) of Alexis JABOUL, 
 ## Introduction
 Esports is now gaining momentum around the world thanks to the competitive scene of the League Of Legends game which gives rise to major global competitions bringing together millions of spectators, with prizes reaching millions of dollars. . In view of this enthusiasm, tens of thousands of “young” players are seeking to make a name for themselves and wish to join prestigious structures. But for that, you have to already prove yourself in smaller teams. You still have to find your teammates. Good luck!
 
+---
+
 ## Objective
 Match Your Mates is a matchmaking service for players looking to find a team or team looking to fill a vacancy. Players who wish to join a team can register on our site in order to be able to apply for announcements of teams looking for players. The teams, for their part, can register in order to submit their announcements.
+
+---
 
 ## Used technologies
 For this project, we used this technologies:<br>
@@ -26,6 +30,7 @@ For this project, we used this technologies:<br>
   => PostgreSQL<br>
   => JSON Web Token
 
+---
 
 ## Present features
 List of features present in project V1:<br>
@@ -60,6 +65,7 @@ List of features present in project V1:<br>
   => Delete profile<br>
   => Search team or player
 
+---
 
 ## Back API routes
 ### For players
@@ -116,6 +122,8 @@ Create one team offer (POST method with a use of a specific JSON Web Token)
 /profile/createOffer
 ```
 
+---
+
 ## Project's futur
 For project's next version, it's what we've planned:<br>
   => finishing the missing pages in front side <br>
@@ -126,4 +134,19 @@ For project's next version, it's what we've planned:<br>
   => create an event side <br>
   => Implement other esport games (like Valorant or CS:GO)
 
+---
 
+## Project team roles
+Here are team membres roles for this vocationnal training project:
+
+#### Melvin JOUVET
+Product owner, front dev
+
+#### Yannick MORRIS
+Lead front dev
+
+#### Alexis JABOUL
+SCRUM master, back dev
+
+#### Nicolas NOURRY
+Git master, lead back dev
