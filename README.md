@@ -105,7 +105,7 @@ New user signup (POST method)
 /signup
 ```
 ### For user profile
-Get user profile (GET method with use of a JSON Web Token)
+Get user profile or delete it (GET and DELETE methods with use of a JSON Web Token)
 ```
 /profile
 ```
