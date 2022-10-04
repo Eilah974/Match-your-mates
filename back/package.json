@@ -1,0 +1,44 @@
+{
+  "name": "projet-13-match-your-mates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "DEBUG=*,-express:*,-nodemon*,-send*,-body-parser* npx nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Daguerre/projet-13-match-your-mates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Daguerre/projet-13-match-your-mates/issues"
+  },
+  "homepage": "https://github.com/O-clock-Daguerre/projet-13-match-your-mates#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bunyan": "^1.8.15",
+    "cors": "^2.8.5",
+    "datasource-sql": "^2.0.1",
+    "debug": "^2.6.9",
+    "dotenv": "^16.0.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.18.1",
+    "helmet": "^5.1.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.2.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

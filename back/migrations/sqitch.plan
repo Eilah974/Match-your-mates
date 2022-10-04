@@ -1,0 +1,6 @@
+%syntax-version=1.0.0
+%project=match-your-mates
+
+
+init 2022-08-19T10:22:03Z Nicolas NOURRY <alex.acropolis@gmail.com> # BD initilazation
+domains 2022-08-19T12:28:35Z Nicolas NOURRY <alex.acropolis@gmail.com> # domains for tables DB

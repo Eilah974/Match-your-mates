@@ -1,0 +1,6 @@
+back/node_modules/
+back/.env
+back/log/
+back/data/update-profile.sql
+back/sqitch.conf
+front/node_modules/
