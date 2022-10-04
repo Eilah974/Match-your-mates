@@ -1,0 +1,46 @@
+.card-title{
+	font-family: 'ubuntu';
+}
+
+.profil {
+	text-decoration: underline;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.true .false {
+	font-weight: bold;
+}
+
+.true {
+	background-color: rgb(128, 192, 31);
+}
+
+.false {
+	background-color: rgb(231, 49, 49);
+}
+
+.profilBtnContainer{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.profilBtn {
+	width: 15rem;
+	
+	align-items: center;
+	text-decoration: none;
+	background-color: black;
+	transition: background-color 1s ease 0s;
+	border: solid 1px red;
+	border-radius: 0.5em;
+	padding: 10px;
+	margin: 0;
+	font-family: 'Bangers';
+}
+
+.card-img-top{
+	height: 200px;
+	object-fit: contain;
+}

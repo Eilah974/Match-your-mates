@@ -1,0 +1,31 @@
+#home
+{
+    background: url("../../../public/photohome.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 77vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#home:after {
+    content: "";
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0; 
+    background: hsla(180,0%,50%,0.25);
+    pointer-events: none;
+}
+
+.true {
+	background-color: rgb(128, 192, 31);
+}
+
+.false {
+	background-color: rgb(231, 49, 49);
+}
