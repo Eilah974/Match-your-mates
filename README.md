@@ -132,7 +132,7 @@ For project's next version, it's what we've planned:<br>
   => link with Riot league of legend API <br>
   => internal messassing <br>
   => create an event side <br>
-  => Implement other esport games (like Valorant or CS:GO)
+  => implement other esport games (like Valorant or CS:GO)
 
 ---
 
