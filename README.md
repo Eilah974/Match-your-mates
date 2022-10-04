@@ -137,7 +137,7 @@ For project's next version, it's what we've planned:<br>
 ---
 
 ## Project team roles
-Here are team membres roles for this vocationnal training project:
+Here are team members roles for this vocationnal training project:
 
 #### Melvin JOUVET
 Product owner, front dev
