@@ -1,6 +1,6 @@
 # Match-your-mates
 
-This is the apotheosis project (vocationnal training project) of Alexis JABOUL, Melvin JOUVET, Yannick MORRIS and Nicolas NOURRY for O'clock school. (Project in SCRUM methodology)
+This is the apotheosis project (vocationnal training project) of Alexis JABOUL, Melvin JOUVET, Yannick MORIS and Nicolas NOURRY for O'clock school. (Project in SCRUM methodology)
 
 ## Introduction
 Esports is now gaining momentum around the world thanks to the competitive scene of the League Of Legends game which gives rise to major global competitions bringing together millions of spectators, with prizes reaching millions of dollars. . In view of this enthusiasm, tens of thousands of “young” players are seeking to make a name for themselves and wish to join prestigious structures. But for that, you have to already prove yourself in smaller teams. You still have to find your teammates. Good luck!
@@ -142,7 +142,7 @@ Here are team members roles for this vocationnal training project:
 #### Melvin JOUVET
 Product owner, front dev
 
-#### Yannick MORRIS
+#### Yannick MORIS
 Lead front dev
 
 #### Alexis JABOUL
