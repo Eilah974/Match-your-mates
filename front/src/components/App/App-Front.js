@@ -41,7 +41,6 @@ function App() {
 				<Route path='/lateam' element={<LaTeam />} />
 				<Route path='/*' element={<K404 />} />
 			</Routes>
-
 			<Footer />
 		</div>
 	);
