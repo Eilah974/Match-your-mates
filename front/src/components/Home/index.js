@@ -1,26 +1,38 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.scss';
 
 const Home = () => {
 	return (
-		<div id='home'>
-			<div className='main'>
-				<h2> Bienvenue sur Match your Mates</h2>
-				<p>
-					Match your mates est un site de mise en relation de joueurs avec des équipes, ou l’inverse… et vice versa, à vocation e-sportive, c'est-à-dire qui recherche la compétition. 
-				</p>
-				<p>
-					Pour le moment nous nous sommes focalisé sur le jeu League of Legends car il remplit plusieurs cases, notamment la hype des joueurs au niveau français, européen, et même mondiale , en plus d’être l’un des jeux compétitif les plus joué au monde.
-				</p>
-				<p>
-					Si ton vocabulaire est de l’ordre de “report jungle for no gank” ou encore “huge mid gap” et que tu recherche des joueurs ou une équipe pour grind le ladder (ça veut dire progressé dans le classement pour les moldus), alors tu es au bon endroit.
-				</p>
-				<p>
-					Cher Match your mates, si tu a l’âme d’un compétiteur alors c’est ici que tu trouveras ton bonheur.
-				</p>
-				<span>
+		<div className='home'>
+			<div className='section-1'>
+				<p>Avez-vous l'âme d'un e-compétiteur ? Si vous cherchez une équipe ou des joueurs mais ne savez pas où chercher, que vous soyez pros ou amateurs et que vous voulez entrer dans la compétion, vous êtes au bon endroit!! </p>
+
+			</div>
+			<div className='section-2'>
+				<p>Avez-vous l'âme d'un e-compétiteur ? Si vous cherchez une équipe ou des joueurs mais ne savez pas où chercher, que vous soyez pros ou amateurs et que vous voulez entrer dans la compétion, vous êtes au bon endroit!! </p>
+				<div className='logo'>
 					<img src='./logomym.png' alt='logo mym' />
-				</span>
+				</div>
+				<div className='section-2__links'>
+					<div className="button__links">
+						<img src="./logo.png" alt="logo" />
+						<button className='links'>
+							<NavLink to='/players' >
+								Players
+							</NavLink>
+						</button>
+					</div>
+
+					<div className="button__links">
+						<img src="./logo.png" alt="logo" />
+						<button className='links'>
+							<NavLink to='/teams' >
+								Teams
+							</NavLink>
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

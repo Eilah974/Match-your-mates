@@ -1,60 +1,149 @@
-#home
-{
-    background: url("../../../public/photohome.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 84vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-/*#home:after {
-    content: "";
-    position: fixed;
-    top: 0; bottom: 0; left: 0; right: 0; 
-    background: hsla(180,0%,50%,0.25);
-    pointer-events: none;
-}*/
-
-.main {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background-color: #fff8f365;
-    justify-content: center;
+.home {
     flex-grow: 1;
-    font-family: 'Ubuntu';
-    padding: 20px;
-    font-weight: bold;
-    color: rgb(13, 13, 13);
+    width: 100vw;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: justify;
-    font-size: 1.2rem;
+    height: 100%;
+    color: #fff;
+}
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50%;
+    background-image: url(../../../public/ella-don-fK5Oomnc-Wk-unsplash.jpg);
+    background-size: cover;
+    background-position: center top;
+    margin: 0;
+    padding: 0;
+}
+.section-1 p {
+    margin: 0 0.5rem 1rem 0.5rem;
 }
 
-.main h2 {
-    text-align: center;
-    font-family: 'Bangers';
-    color: #0f63c9;
-    margin-bottom: 1em;
-    font-size: 2.5rem;
-
-
+.section-2 {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    background-color: black;
+}
+.section-2 p {
+    display: none;
 }
 
-.main span {
-    text-align: center;
-    margin-top: 1em;
+.section-2 .logo {
+    display: none;
+}
+.section-2__links img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+.section-2__links {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.button__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button__links img {
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+}
+.links {
+    background-color: black;
+    border: 2px solid #000;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.links a {
+    color: #fff;
+    margin: 3px;
+    font-size: 2rem;
 }
 
-.main img {
-    max-height: 140px;
-	max-width: 140px;
-	flex-shrink: 0;
+.links a:hover {
+    color: #1C6DD0;
 }
 
+@media screen and (min-width:769px) {
+    .home {
+        flex-direction: row;
+        position: relative;
+        width: 100vw;
+    }
+
+    .section-1 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    .section-1 p {
+        display: none;
+    }
+
+    .section-2 {
+        z-index: 1;
+        width: 40%;
+        height: 100%;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 70% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0%, 70% 100%, 0 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-2__links {
+        display: none;
+    }
+
+    .section-2 p, .section-2 .logo {
+        display: block;
+    }
+
+    .section-2 p {
+        width: 70%;
+        margin: 3rem 0;
+        font-size: 1rem;
+    }
+
+    .section-2 .logo img{
+        margin: 0 auto;
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .section-2 .logo img{
+        width: 15rem;
+        height: 15rem;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+
+    .section-2 .logo img{
+        width: 20rem;
+        height: 20rem;
+    }
+    .section-2 p {
+        margin: 5rem 0;
+        font-size: 1.5rem;
+    }
+}

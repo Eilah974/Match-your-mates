@@ -3,7 +3,6 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	position: fixed;
 	width: 100%;
 	min-height: 75px;
 	padding: 1rem;
@@ -15,6 +14,7 @@
 .navbar__logo {
 	color: inherit;
 	font-size: 1.2rem;
+	margin: 0 0.3rem;
 }
 
 .navbar__logo img {

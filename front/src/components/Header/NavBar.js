@@ -24,7 +24,7 @@ const NavBar = ({ userInfoState, setUserInfo }) => {
 		<nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
 			<Link to='/' className='navbar__logo'>
 				<img src='./logomym.png' alt='logo mym' />
-				Match Your Mates
+				<span>Match Your Mates</span>
 			</Link>
 			<ul className='navbar__links'>
 				<li className='navbar__item slideInDown-1'>
