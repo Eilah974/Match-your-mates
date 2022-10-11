@@ -30,8 +30,8 @@ const PlayerList = () => {
 					<div className="player__card-img">
 						<img
 							src={player.avatar}
-							className='card-img-top'
-							alt='player'
+							className='player__card-img-top'
+							alt={player.username}
 						></img>						
 					</div>
 					<div className='card__description'>

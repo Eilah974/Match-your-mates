@@ -29,6 +29,14 @@ width: 100vw;
 	margin: 10px 0;
 	height: 200px;
 	width: auto;
+	display: flex;
+	align-items: center;
+}
+
+.team__card-img-top{
+	max-height: 200px;
+	max-width: 100%;
+	display: block;
 }
 
 .card__description {
@@ -109,6 +117,8 @@ width: 100vw;
 	.detail-button a {
 		font-size: 1.7rem;
 	}
+
+
 }
 
 

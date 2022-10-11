@@ -28,7 +28,15 @@ width: 100vw;
 .player__card-img {
 	margin: 10px 0;
 	height: 200px;
-	width: auto;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.player__card-img-top{
+	max-height: 100%;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 .card__description {
@@ -107,6 +115,10 @@ width: 100vw;
 	}
 	.detail-button a {
 		font-size: 1.7rem;
+	}
+
+	.card-img-top{
+		height: 200px;
 	}
 }
 

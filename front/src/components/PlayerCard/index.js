@@ -32,7 +32,7 @@ const PlayerCard = () => {
 							<img
 								src={player.avatar}
 								className='card-img-top'
-								alt='player'
+								alt={player.username}
 							></img>						
 						</div>
 						<div className='detail__description-left'>

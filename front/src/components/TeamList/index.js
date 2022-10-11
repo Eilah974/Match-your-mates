@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import axios from 'axios';
 import instance from '../../utils/axios';
 import { useEffect, useState } from 'react';
-import './style.scss';
+import './teamList.scss';
 import { NavLink } from 'react-router-dom';
 /*const instance = axios.get({
 	baseURL: 'http://localhost:4000/',
@@ -37,11 +37,11 @@ const TeamList = () => {
 		<div className='card__container'>
 			{data.map((team) => (
 				<div className='team__card' key={team.id}>
-					<div className="team__card-img">
+					<div className='team__card-img'>
 						<img
 							src={team.avatar}
-							className='card-img-top'
-							alt='team'
+							className='team__card-img-top'
+							alt={team.username}
 						></img>						
 					</div>
 					<div className='card__description'>
