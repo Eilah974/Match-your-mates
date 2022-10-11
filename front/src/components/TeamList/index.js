@@ -32,39 +32,6 @@ const TeamList = () => {
 		getTeams();
 	}, []);
 
-	/*return (
-		<div className='cardcontainer'>
-			{data.map((team) => (
-				<div className='card' key={team.id}>
-				{team.avatar ?
-					<img
-						src={team.avatar}
-						className='card-img-top'
-						alt='tech'
-					></img>
-				:
-				<img
-						src='./logo-mym-sansbg.png'
-						className='card-img-top'
-						alt='tech'
-					></img>
-				}
-					<div className='card-body'>
-						<p className='card-text'>{team.username}</p>
-
-						<p className='card-text'>{team.rank?.type}</p>
-						
-				
-						<button className='detailbutton'>
-							<NavLink to={`${team.id}`}>
-								<footer className='card-footer'>Voir le détail</footer>
-							</NavLink>
-						</button>
-					</div>
-				</div>
-			))}
-		</div>
-	);*/
 
 	return (
 		<div className='card__container'>

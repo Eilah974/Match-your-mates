@@ -1,0 +1,194 @@
+h5, p {
+	margin: 0;
+	padding: 0;
+}
+
+
+.detail__container {
+	display: flex;
+	flex-grow: 1;
+	text-align: justify;
+	width: 100vw;
+}
+
+.detail__card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem auto;
+	width: 70%;
+	height: auto;
+	background-color: #2a0944;
+	padding: 0 1rem;
+	color: #fff
+}
+
+.detail__card__left, 
+.detail__card__right, 
+.detail__description-left {
+    width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.detail__card__left {
+	border-right: 3px;
+}
+
+.detail__card-img {
+	margin: 10px 0;
+	height: 200px;
+	width: auto;
+}
+
+
+.detail__description-box {
+	width: 100%;
+	border-bottom: 2px solid #fff;
+	padding: 3px 0;
+}
+
+.detail__card__right .b2 {
+	border: none;
+}
+
+.detail__description-box h5 {
+	font-weight: bold;
+}
+
+@media screen and (min-width:768px) {
+	.detail__card {
+		width: 90%;
+		flex-direction: row;
+		padding: 0;
+	}
+
+	.detail__card__left, 
+	.detail__card__right {
+		height: 100%;
+		padding: 10px;
+		margin: 3px 0;
+	}
+
+	.detail__description-left {
+		height: 100%;
+	}
+
+	.detail__description-left .detail__description-box {
+		height: 20%;
+		padding: auto 0;
+	}
+
+	 .b1 p {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.available {
+		background-color: green;
+		padding: 5px 10px;
+		border-radius: 10px;
+	}
+
+	.unavailable {
+		background-color: red;
+		padding: 5px 10px;
+		border-radius: 10px;
+	}
+
+	.detail__card__left {
+		width: 45%;
+		border-right: 3px solid #fff;
+	}
+
+	.detail__description-box {
+		padding: 10px 0;
+		border: none;
+	}
+
+	.detail__card__right .detail__description-box {
+		height: 50%;
+	}
+}
+
+@media screen and (min-width:1024px) {
+
+	.detail__card {
+		width: 60%;
+
+	}
+
+}
+
+@media screen and (min-width:1920px) {
+	.b1 p {
+		font-size: 1.9rem;
+	}
+
+	.detail__description-left .detail__description-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.detail__card-img {
+		margin: 10px 0;
+		height: 250px;
+		width: auto;
+	}
+
+
+	.card-img-top{
+		height: 250px;
+	}
+	.available {
+		padding: 10px 20px;
+		border-radius: 20px;
+	}
+
+	.unavailable {
+		padding: 10px 20px;
+		border-radius: 20px;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	h5 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1.9rem;
+	}
+
+	.b1 p {
+		font-size: 2.5rem;
+	}
+
+	.b1 span {
+		font-size: 2.5rem;
+	}
+
+	.detail__card-img {
+		margin: 10px 0;
+		height: 350px;
+		width: auto;
+	}
+
+
+	.card-img-top{
+		height: 350px;
+	}
+
+	.available {
+		padding: 10px 40px;
+		border-radius: 25px;
+	}
+
+	.unavailable {
+		padding: 10px 40px;
+		border-radius: 25px;
+	}
+}
