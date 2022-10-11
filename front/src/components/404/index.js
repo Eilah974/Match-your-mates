@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './style.scss';
+import './404.scss';
 const K404 = () => {
 	const navigate = useNavigate();
 
