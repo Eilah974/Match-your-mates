@@ -32,7 +32,7 @@ const TeamList = () => {
 		getTeams();
 	}, []);
 
-	return (
+	/*return (
 		<div className='cardcontainer'>
 			{data.map((team) => (
 				<div className='card' key={team.id}>
@@ -64,7 +64,38 @@ const TeamList = () => {
 				</div>
 			))}
 		</div>
+	);*/
+
+	return (
+		<div className='card__container'>
+			{data.map((team) => (
+				<div className='team__card' key={team.id}>
+					<div className="team__card-img">
+						<img
+							src={team.avatar}
+							className='card-img-top'
+							alt='team'
+						></img>						
+					</div>
+					<div className='card__description'>
+						<div className="card__description-box">
+							<h5 className='card__title '>Team Name:</h5>
+							<p className='card__text'>{team.username}</p>
+						</div>
+						<div className="card__description-box">
+							<h5 className='card__title'>Global Rank:</h5>
+							<p className='card__text'>{team.rank?.type}</p>							
+						</div>							
+						<button className='detail-button'>
+							<NavLink to={`${team.id}`}>Infos</NavLink>
+						</button>
+					</div>
+					
+				</div>
+			))}
+		</div>
 	);
+
 };
 export default TeamList;
 

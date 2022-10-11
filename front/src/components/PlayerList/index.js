@@ -24,24 +24,31 @@ const PlayerList = () => {
 	}, []);
 
 	return (
-		<div className='cardcontainer'>
+		<div className='card__container'>
 			{data.map((player) => (
-				<div className='card' key={player.id}>
-					<img
-						src={player.avatar}
-						className='card-img-top'
-						alt='tech'
-					></img>
-					<div className='card-body d-flex flex-column'>
-						<h5 className='card-title pb-2'>Player Tag:</h5>
-						<p className='card-text'>{player.username}</p>
-						<h5 className='card-title pb-2'>Role:</h5>
-						<p className='card-text'>{player.game_role?.type}</p>
-						<h5 className='card-title pb-2'>Rank:</h5>
-						<p className='card-text'>{player.rank?.type}</p>
-
-						<button className='detailbutton'>
-							<NavLink to={`${player.id}`}>Voir le détail</NavLink>
+				<div className='player__card' key={player.id}>
+					<div className="player__card-img">
+						<img
+							src={player.avatar}
+							className='card-img-top'
+							alt='player'
+						></img>						
+					</div>
+					<div className='card__description'>
+						<div className="card__description-box">
+							<h5 className='card__title '>Player Tag:</h5>
+							<p className='card__text'>{player.username}</p>
+						</div>
+						<div className="card__description-box">
+							<h5 className='card__title '>Role:</h5>
+							<p className='card__text'>{player.game_role?.type}</p>							
+						</div>
+						<div className="card__description-box">
+							<h5 className='card__title'>Rank:</h5>
+							<p className='card__text'>{player.rank?.type}</p>							
+						</div>							
+						<button className='detail-button'>
+							<NavLink to={`${player.id}`}>Infos</NavLink>
 						</button>
 					</div>
 					
