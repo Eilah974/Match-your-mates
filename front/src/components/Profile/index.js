@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import instance from '../../utils/axios';
-import './style.scss'
+import './profile.scss'
 import { NavLink } from 'react-router-dom';
 
 const Profile = () => {

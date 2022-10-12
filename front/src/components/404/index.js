@@ -10,8 +10,10 @@ const K404 = () => {
 	};
 	return (
 		<div className='body404'>
-			<img className='img404' src='./sardoche.gif' alt='404'></img>
-			<div className='butonbody'>
+			<div className="container">
+				<div className="error-box">
+					<img className='error-box-img' src='./sardoche.gif' alt='404'></img>
+				</div>
 				<button onClick={backToHome} className='button404'>
 					Bah alors... on est perdu? clique ici pour retourner dans la faille
 				</button>

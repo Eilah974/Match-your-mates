@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import instance from '../../utils/axios';
 //import axios from 'axios';
 import { useEffect, useState } from 'react';
-import './style.scss';
+import './playerList.scss';
 import { NavLink } from 'react-router-dom';
 
 const PlayerList = () => {
