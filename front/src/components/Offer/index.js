@@ -7,6 +7,10 @@ const Offer = () => {
 	const [offer, setOffer] = useState();
 	const { id, announcementId } = useParams();
 
+
+	// récupératio des user infos dans le local sotrage
+
+
 	const getOffer = async () => {
 		instance.get(`/teams/${id}/offers/${announcementId}`).then((response) => {
 			setOffer(response.data);

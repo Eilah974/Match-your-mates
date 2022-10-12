@@ -18,7 +18,8 @@ const userController = {
 
         const teams = await User.findAll({
             where: { userType: 'team' },
-            include: 'rank',
+            include: ['rank', 'announcements'],
+            order: [['id', 'ASC']],
         });
         return res.json(teams);
     },

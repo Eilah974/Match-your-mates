@@ -20,6 +20,7 @@ const OffersList = () => {
 		getOffersList();
 	}, []);
 
+
 	return (
 		<div className='offers__list'>
 			{data.map((offer) => (

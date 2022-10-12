@@ -97,6 +97,7 @@ const Profile = () => {
 							<button className='profile-button'>
 								<NavLink to='#'>Supprimer compte</NavLink>
 							</button>
+
 						</div>
 					</div>
 				)}

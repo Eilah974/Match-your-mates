@@ -93,6 +93,7 @@ const TeamCard = () => {
 							<h5 className='detail__title '>Team description:</h5>
 							<p className='detail__text'>{team.description}</p>
 						</div>
+						
 						<button className='offers-list-button'>
 							<NavLink to={'offers'}>	Voir les annonces</NavLink>
 						</button>						
