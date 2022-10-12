@@ -33,14 +33,18 @@ h5, p {
 	justify-content: flex-start;
 }
 
-.detail__card__left {
-	border-right: 3px;
-}
 
 .detail__card-img {
 	margin: 10px 0;
 	height: 200px;
 	width: auto;
+	display: flex;
+}
+
+.card-img-top{
+	max-height: 100%;
+	width: auto;
+	margin: 0 auto;
 }
 
 

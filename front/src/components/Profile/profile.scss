@@ -1,46 +1,289 @@
-.card-title{
-	font-family: 'ubuntu';
-}
-
-.profil {
-	text-decoration: underline;
-	font-style: italic;
-	font-weight: bold;
-}
-
-.true .false {
-	font-weight: bold;
-}
-
-.true {
-	background-color: rgb(128, 192, 31);
-}
-
-.false {
-	background-color: rgb(231, 49, 49);
-}
-
-.profilBtnContainer{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-
-.profilBtn {
-	width: 15rem;
-	
-	align-items: center;
-	text-decoration: none;
-	background-color: black;
-	transition: background-color 1s ease 0s;
-	border: solid 1px red;
-	border-radius: 0.5em;
-	padding: 10px;
+h5, p {
 	margin: 0;
-	font-family: 'Bangers';
+	padding: 0;
 }
 
-.card-img-top{
+
+.profile__detail__container {
+	display: flex;
+	flex-grow: 1;
+	text-align: justify;
+	width: 100vw;
+}
+
+.profile__detail__card,
+.profile__team__detail__card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem auto;
+	width: 70%;
+	height: auto;
+	padding: 0 1rem;
+	color: #fff
+}
+
+.profile__detail__infos {
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.profile__detail__card {
+	background-image: linear-gradient(to bottom, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+}
+
+.profile__team__detail__card {
+	background-image: linear-gradient(to top, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+}
+
+.profile__detail__card__left, 
+.profile__detail__card__right, 
+.profile__detail__description-left {
+    width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+
+.profile__detail__card-img {
+	margin: 10px 0;
 	height: 200px;
-	object-fit: contain;
+	width: auto;
+	display: flex;
+}
+
+.profile__card-img-top {
+	max-height: 100%;
+	width: auto;
+	margin: 0 auto;
+}
+
+
+.profile__detail__description-box {
+	width: 100%;
+	border-bottom: 2px solid #fff;
+	padding: 3px 0;
+}
+
+.profile__detail__card__right .b2 {
+	border: none;
+}
+
+.profile__detail__description-box h5 {
+	font-weight: bold;
+}
+
+.available {
+	background-color: green;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+.unavailable {
+	background-color: red;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+.b1 p {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.player__profile__button {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center
+}
+
+.profile-button {
+	margin: 1rem;
+	background-color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 0;
+}
+
+.profile-button a {
+	font-weight: bold;
+	font-size: 1rem;
+	color: #2a0944;
+}
+
+@media screen and (min-width:768px) {
+	.profile__detail__card,
+	.profile__team__detail__card {
+		width: 90%;
+	}
+
+	.profile__detail__infos {
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 0;
+		height: 90%;
+		order: 2
+	}
+
+	.player__profile__button {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-evenly;
+		order: 1
+		
+	}
+
+	.profile-button {
+		padding: 5px 2px;
+		margin: 1rem 0;
+		line-height: 1rem;
+	}	
+	.profile-button a {
+		font-size: 0.8rem;
+	}
+
+	.profile__detail__card__left, 
+	.profile__detail__card__right{
+		height: 100%;
+		padding: 10px;
+		margin: 3px 0;
+	}
+
+
+	.profile__detail__card__right {
+		justify-content: flex-start;
+		width: 55%;
+	}
+
+	.profile__detail__description-left {
+		height: 100%;
+	}
+
+	.profile__detail__description-left .profile__detail__description-box {
+		height: 20%;
+		padding: auto 0;
+	}
+
+
+
+	.profile__detail__card__left {
+		width: 45%;
+		border-right: 3px solid #fff;
+	}
+
+	.profile__detail__description-box {
+		padding: 10px 0;
+		border: none;
+	}
+
+	.profile__detail__card__right .profile__detail__description-box {
+		height: 50%;
+		padding-bottom: auto;
+	}
+}
+
+@media screen and (min-width:1024px) {
+
+	.profile-button {
+		padding: 10px;
+	}	
+	.profile-button a {
+		font-size: 1rem;
+	}
+
+	.profile__detail__card__left {
+		width: 30%;
+	}
+
+	.profile__detail__card__right {
+		width: 55%;
+	}
+
+}
+
+@media screen and (min-width:1440px) {
+	.profile__detail__card,
+	.profile__team__detail__card {
+		width: 70%;
+	}
+
+}
+
+@media screen and (min-width:1920px) {
+	.profile__detail__card,
+	.profile__team__detail__card {
+		width: 60%;
+	}
+
+	.b1 p {
+		font-size: 1.9rem;
+	}
+
+	.profile__detail__description-left .profile__detail__description-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.profile__detail__card-img {
+		margin: 10px 0;
+		height: 250px;
+		width: auto;
+	}
+
+
+	.available {
+		padding: 10px 20px;
+		border-radius: 20px;
+	}
+
+	.unavailable {
+		padding: 10px 20px;
+		border-radius: 20px;
+	}
+
+	.profile-button a {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	h5 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1.9rem;
+	}
+
+	.b1 p {
+		font-size: 2.5rem;
+	}
+
+	.b1 span {
+		font-size: 2.5rem;
+	}
+
+	.profile__detail__card-img {
+		margin: 10px 0;
+		height: 350px;
+		width: auto;
+	}
+
+
+	.available {
+		padding: 10px 40px;
+		border-radius: 25px;
+	}
+
+	.unavailable {
+		padding: 10px 40px;
+		border-radius: 25px;
+	}
 }
