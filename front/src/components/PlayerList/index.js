@@ -10,10 +10,10 @@ const PlayerList = () => {
 	const [data, setData] = useState([]);
 
 	const getPlayers = async () => {
-		console.log("requete")
+		//console.log("requete")
 		instance.get('/players').then((response) => {
 			const players = response.data;
-			console.log(players)
+			//console.log(players)
 			setData(players);
 		});
 	};

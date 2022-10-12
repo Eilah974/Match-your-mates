@@ -7,7 +7,7 @@
     text-align: justify;
 }
 
-.offer__card {
+.offers__list__card {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,7 +22,7 @@
 
 
 
-.offer__card-body,
+.offers__list__card-body,
 .team__logo,
 .team__logo-img,
 .offer__button
@@ -51,7 +51,7 @@
 }
 
 @media screen and (min-width: 767px) {
-    .offer__card,
+    .offers__list__card,
     .offers__list {
         flex-direction: row;
     }
@@ -62,7 +62,7 @@
 
     }
 
-    .offer__card {
+    .offers__list__card {
         width: 47%;
         height: 20%;
         background-image: linear-gradient(to left, #2a0944, #4d0149, #6d0048, #890041, #a10035);
@@ -82,7 +82,7 @@
         font-size: 0.9rem;
     }
 
-    .offer__card-body {
+    .offers__list__card-body {
         padding: 0 0.5rem;
     }
 
@@ -100,7 +100,7 @@
 }
 
 @media screen and (min-width:1024px) {
-    .offer__card {
+    .offers__list__card {
         margin: 0.5rem 0.9rem;
     }
 }
@@ -110,7 +110,7 @@
         width: 35%;
     }
 
-    .offer__card {
+    .offers__list__card {
         margin: 0.5rem 1.3rem;
     }    
 }
@@ -120,7 +120,7 @@
         font-size: 1.2rem;
     }
 
-    .offer__card {
+    .offers__list__card {
         margin: 1rem 1.8rem;
     }  
 }

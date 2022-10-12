@@ -22,7 +22,7 @@ const TeamList = () => {
 	const getTeams = async () => {
 		instance.get('/teams').then((response) => {
 			const teams = response.data;
-			console.log(teams)
+			//console.log(teams)
 			setData(teams);
 		});
 	};

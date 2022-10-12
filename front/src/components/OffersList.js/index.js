@@ -24,11 +24,11 @@ const OffersList = () => {
 	return (
 		<div className='offers__list'>
 			{data.map((offer) => (
-				<div className='offer__card' key={offer.id}>
+				<div className='offers__list__card' key={offer.id}>
 					<div className="team__logo">
-						<img src={offer.team.avatar} alt="team logo" className="team__logo-img" />
+						<img src={offer.team.avatar} alt={offer.team.username} className='team__logo-img' />
 					</div>
-					<div className='offer__card-body'>
+					<div className='offers__list__card-body'>
 						<p className='card-text'>{offer.title}</p>
 					</div>
 					<div className="offer__button">

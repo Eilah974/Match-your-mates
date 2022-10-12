@@ -24,29 +24,40 @@ const Offer = () => {
 	}, []);
 
 	return (
-		<div id='home'>
-			<div className='cardcontainer'>
-				{offer && (
-					<div className='card' key={offer.id}>
+		<div className='offer__container'>
+			{offer && (
+				<div className='offer__card' key={offer.id}>
+					<div className="offer__team-logo">
 						<img
-							src='https://media.istockphoto.com/photos/team-of-professional-cybersport-gamers-celebrating-success-in-gaming-picture-id1354761874?k=20&m=1354761874&s=612x612&w=0&h=rNYRSukPvoDbAO-VeXqYzD9xmslIEjD0iQgcc7oLhuI='
-							className='card-img-top'
-							alt='tech'
+							src={offer.team.avatar}
+							className='offer__team-logo-img'
+							alt={offer.team.username}
 						></img>
-						<div className='card-body'>
-							<p className='card-text'>{offer.title}</p>
+					</div>
+					<div className='offer__card-body'>
+						<div className="offer__card-body-detail ocbd1">
+							<h5 className='card-text'>{offer.title}</h5>
+						</div>
+						<div className="offer__card-body-detail ocbd2">
+							<h5>Description</h5>
 							<p className='card-text'>{offer.description}</p>
+						</div>
+						<div className="offer__card-body-detail ocbd2 ob1">
+							<h5>Profil recherché</h5>
 							<p className='card-text'>{offer.searchProfile}</p>
-							<button className='detailbutton'>
-								<a className='toto' href='/postuler '>
-									<footer className='card-footer'>Postuler (en construction)</footer>
-								</a>
-							</button>
 						</div>
 					</div>
-				)}
-			</div>
+					<div className='offer__apply'>
+						<button className='apply__button'>
+							<a className='toto' href='/postuler '>
+								<footer className='card-footer'>Postuler (en construction)</footer>
+							</a>
+						</button>
+					</div>
+				</div>
+			)}
 		</div>
+
 	);
 };
 
