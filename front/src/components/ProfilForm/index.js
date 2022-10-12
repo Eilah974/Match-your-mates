@@ -110,7 +110,7 @@ const ProfileForm = () => {
 			<div className='registerStyle'>
 				<form onSubmit={handleSubmit} className='row g-3 mt-5 w-25 m-auto'>
 					<div className='registerTitleStyle'>
-						<label className='mt-5'>Formulaire de modification</label>
+						<label className='mt-5'>Modification du profile</label>
 					</div>
 	
 					<input

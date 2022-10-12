@@ -6,6 +6,7 @@ const announcementController = {
         // méthode pour récupérer toutes les annonces d'une team
         const announcements = await Announcement.findAll({
             where: { user_id: +req.params.id },
+            include: 'team',
         });
         return res.json(announcements);
     },

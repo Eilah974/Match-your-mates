@@ -65,7 +65,7 @@ const TeamCard = () => {
 						<div className="detail__card-img">
 							<img
 								src={team.avatar}
-								className='card-img-top'
+								className='team__card-img-top'
 								alt={team.username}
 							></img>						
 						</div>

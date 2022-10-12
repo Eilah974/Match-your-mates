@@ -41,6 +41,14 @@ h5, p {
 	margin: 10px 0;
 	height: 200px;
 	width: auto;
+	display: flex;
+	align-items: center;
+}
+
+.team__card-img-top {
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
 }
 
 .b1 p {

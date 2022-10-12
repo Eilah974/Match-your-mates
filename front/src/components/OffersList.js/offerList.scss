@@ -1,0 +1,107 @@
+.offers__list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100vw;
+    text-align: justify;
+}
+
+.offer__card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+	margin: 1rem auto;
+    padding: 0 10px;
+	width: 70%;
+	background-image: linear-gradient(to top, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+	color: #fff
+}
+
+
+
+
+.offer__card-body,
+.team__logo,
+.team__logo-img,
+.offer__button
+{
+    width: 100%;
+}
+
+.offer__button {
+    display: flex;
+    justify-content: center;
+}
+
+.offer__detail__button {
+    margin: 1rem;
+	background-color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 0;
+    width: 90%;
+}
+
+.offer__detail__button a {
+    font-weight: bold;
+	font-size: 1rem;
+	color: #2a0944;
+}
+
+@media screen and (min-width: 767px) {
+    .offer__card,
+    .offers__list {
+        flex-direction: row;
+    }
+
+    .offers__list {
+        flex-wrap: wrap;
+
+    }
+
+    .offer__card {
+        width: 45%;
+        height: 20%;
+        background-image: linear-gradient(to left, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+
+    }
+
+    .offer__button {
+        width: 25%;
+    }
+
+    .offer__detail__button {
+        padding: 2px;
+    }
+
+    .offer__detail__button a {
+        font-size: 0.9rem;
+    }
+
+    .offer__card-body {
+        padding: 0 0.5rem;
+    }
+
+    .team__logo {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .offer__button {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width:1920px) {
+    .offer__detail__button a {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width:2560px) {
+    .offer__detail__button a {
+        font-size: 1.7rem;
+    }
+}
