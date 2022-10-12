@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import instance from '../../utils/axios';
 import { useParams } from 'react-router-dom';
+import './offer.scss'
 
 const Offer = () => {
 	const [offer, setOffer] = useState();

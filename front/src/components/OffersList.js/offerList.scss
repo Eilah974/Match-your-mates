@@ -1,6 +1,7 @@
 .offers__list {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     flex-grow: 1;
     width: 100vw;
     text-align: justify;
@@ -57,13 +58,15 @@
 
     .offers__list {
         flex-wrap: wrap;
+        justify-content: flex-start;
 
     }
 
     .offer__card {
-        width: 45%;
+        width: 47%;
         height: 20%;
         background-image: linear-gradient(to left, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+        margin: 0.5rem 0.7rem;
 
     }
 
@@ -85,6 +88,15 @@
 
     .team__logo {
         width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .offer__card {
+        margin: 0.5rem 0.9rem;
     }
 }
 
@@ -92,16 +104,28 @@
     .offer__button {
         width: 35%;
     }
+
+    .offer__card {
+        margin: 0.5rem 1.3rem;
+    }    
 }
 
 @media screen and (min-width:1920px) {
     .offer__detail__button a {
         font-size: 1.2rem;
     }
+
+    .offer__card {
+        margin: 1rem 1.8rem;
+    }  
 }
 
 @media screen and (min-width:2560px) {
     .offer__detail__button a {
         font-size: 1.7rem;
     }
+
+    .offer__card {
+        margin: 1.5rem 2.3rem;
+    } 
 }
