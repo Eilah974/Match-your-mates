@@ -9,6 +9,8 @@ const userController = {
         const players = await User.findAll({
             where: { userType: 'player' },
             include: ['rank', 'game_role'],
+            order: [['id', 'ASC']],
+
         });
         return res.json(players);
     },
