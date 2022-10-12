@@ -9,7 +9,6 @@ const token = require('../utils/JWT');
 const authController = {
 
     signup: async (req, res) => {
-        console.log(req.body);
         // Méthode pour la soumission du formulaire d'inscription
         const {
             username, email, password, passwordConfirm, userType,
