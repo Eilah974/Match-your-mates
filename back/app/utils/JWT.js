@@ -39,9 +39,6 @@ module.exports = {
                 throw new ApiError('No authorization', { statusCode: 401 });
             }
 
-            if (!user.ip || user.ip !== req.ip) {
-                throw new ApiError("This IP can't acces to this service, please renew your token /login", { statusCode: 401 });
-            }
             req.user = user;
             debug(user);
             next();
@@ -58,9 +55,6 @@ module.exports = {
         jwt.verify(token, secretToken, (err, user) => {
             if (err) {
                 throw new ApiError('No authorization', { statusCode: 401 });
-            }
-            if (!user.ip || user.ip !== req.ip) {
-                throw new ApiError("This IP can't acces to this service, please renew your token /login", { statusCode: 401 });
             }
 
             req.user = user;
