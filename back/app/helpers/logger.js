@@ -1,7 +1,4 @@
 /**
- * Bunyan n'est pas le plus populaire des package,
- * mais il a l'avantage d'être complet et simple à implémenter
- * Donc le parfait candidat pour une démonstration !
  *
  * Liste des niveaux de log
  *

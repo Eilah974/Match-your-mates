@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import instance from '../../utils/axios';
 import './profile.scss'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-const Profile = () => {
+const Profile = ({ userInfoState, setUserInfo }) => {
 	const [profile, setProfile] = useState();
 	// const token = localStorage.getItem('accessToken');
 	// const config = {
@@ -13,11 +13,24 @@ const Profile = () => {
 	// };
 	const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
+	const navigate = useNavigate();
+
 	const getProfile = () => {
 		 instance.get('/profile').then((response) => {
 			const userProfile = response.data
 			setProfile(userProfile);
 		});
+	};
+
+	const handleDelete = (e) => {
+		if (!window.confirm('Êtes vous sûr de vouloir supprimer votre compte?')) return;
+		instance.delete('/profile').then((response) => {
+			console.log(response.data);
+		});
+		localStorage.removeItem('userInfo', 'accessToken');
+		setUserInfo(null)
+		e.preventDefault();
+		navigate('/');
 	};
 
 	useEffect(() => {
@@ -95,7 +108,7 @@ const Profile = () => {
 								<NavLink to='#'>Modifier mot de passe</NavLink>
 							</button>
 							<button className='profile-button'>
-								<NavLink to='#'>Supprimer compte</NavLink>
+								<NavLink to='/' onClick={handleDelete}>Supprimer compte</NavLink>
 							</button>
 
 						</div>
@@ -166,7 +179,7 @@ const Profile = () => {
 								<NavLink to='#'>Modifier mot de passe</NavLink>
 							</button>
 							<button className='profile-button'>
-								<NavLink to='#'>Supprimer compte</NavLink>
+								<NavLink to='/' onClick={handleDelete}>Supprimer compte</NavLink>
 							</button>
 						</div>
 					</div>

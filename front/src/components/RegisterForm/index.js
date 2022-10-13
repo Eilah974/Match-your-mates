@@ -56,8 +56,8 @@ const RegisterForm = () => {
 			passwordConfirm,
 			userType
 		}
-		console.log("data", userData)
-		console.log(typeof(userData))
+		// console.log("data", userData)
+		// console.log(typeof(userData))
 		await instance.post('/signup', userData).then((response) => {
 			const account = response.data;
 			console.log("response",account)
@@ -81,16 +81,16 @@ const RegisterForm = () => {
 
 	const navigate = useNavigate();
 
-	const register = (inputs) => {
-		console.log('email:');
-		console.log(inputs.current[0].value);
-		console.log('username:');
-		console.log(inputs.current[1].value);
-		console.log('password:');
-		console.log(inputs.current[2].value);
-		console.log('userType:');
-		console.log(inputs.current[4].value);
-	};
+	// const register = (inputs) => {
+	// 	console.log('email:');
+	// 	console.log(inputs.current[0].value);
+	// 	console.log('username:');
+	// 	console.log(inputs.current[1].value);
+	// 	console.log('password:');
+	// 	console.log(inputs.current[2].value);
+	// 	console.log('userType:');
+	// 	console.log(inputs.current[4].value);
+	// };
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -107,7 +107,7 @@ const RegisterForm = () => {
 			return;
 		}
 
-		register(inputs);
+		//register(inputs);
 		
 		// création de la requète axios
 		// instance
@@ -138,7 +138,7 @@ const RegisterForm = () => {
 		// 		console.log('erreur!!!');
 		// 	 });
 		navigate('/login');
-		console.log(inputs);
+		//console.log(inputs);
 	};
 	
 	//  affichage du register form
