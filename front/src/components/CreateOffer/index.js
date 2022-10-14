@@ -74,15 +74,15 @@ const CreateOffer = () => {
 
 	const navigate = useNavigate();
 
-	const register = (inputs) => {
-		console.log('title:');
-		console.log(inputs.current[0].value);
-		console.log('description:');
-		console.log(inputs.current[1].value);
-		console.log('searchProfile:');
-		console.log(inputs.current[2].value);
+	// const register = (inputs) => {
+	// 	console.log('title:');
+	// 	console.log(inputs.current[0].value);
+	// 	console.log('description:');
+	// 	console.log(inputs.current[1].value);
+	// 	console.log('searchProfile:');
+	// 	console.log(inputs.current[2].value);
 
-	};
+	// };
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -107,7 +107,7 @@ const CreateOffer = () => {
 		}
 
 
-		register(inputs);
+		//register(inputs);
 		
 		// création de la requète axios
 		// instance
@@ -138,7 +138,7 @@ const CreateOffer = () => {
 		// 		console.log('erreur!!!');
 		// 	 });
 		// navigate(`/teams/${userInfo.id}/offers/${offer.id}`);
-		console.log(inputs);
+		//console.log(inputs);
 	};
 	
 	//  affichage du register form

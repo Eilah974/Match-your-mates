@@ -8,7 +8,9 @@ const Offer = () => {
 	const { id, announcementId } = useParams();
 
 
-	// récupératio des user infos dans le local sotrage
+	// récupération des user infos dans le local sotrage
+	// const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
 
 
 	const getOffer = async () => {

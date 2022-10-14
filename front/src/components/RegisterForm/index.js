@@ -97,8 +97,8 @@ const RegisterForm = () => {
 		
 
 		// Verification de la longueur du mot de passe
-		if ((inputs.current[2].value.length || inputs.current[3].value.length) < 6) {
-			setValidation('Votre mot de passe doit comporter 6 characters minimum');
+		if ((inputs.current[2].value.length || inputs.current[3].value.length) < 8) {
+			setValidation('Votre mot de passe doit comporter 8 characters minimum');
 			return;
 		}
 		//Verification que les deux mots de passe sont bien identiques
@@ -177,7 +177,7 @@ const RegisterForm = () => {
 					id='password'
 					value={password}
 					name='password'
-					placeholder='votre mot de passe:'
+					placeholder='votre mot de passe: (min 8 charactères, une majuscule et un caractère spécial)'
 				/>
 				<input
 					className='form-control text-left'
