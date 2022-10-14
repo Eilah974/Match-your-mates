@@ -8,28 +8,76 @@ const { editOfferSchema } = require('../validation/schemas');
 
 const router = express.Router();
 
-// route pour la liste de tous les equipes
 router
     .route('/')
+    /**
+     * GET /teams
+     * @summary Route pour voir la liste de toutes les teams
+     * @tag Team
+     * @return {[Team]} 200 - success response - application/json
+     */
     .get(controllersHandler(userController.getAllTeams));
 
-// route pour un equipe
 router
     .route('/:id(\\d+)')
+    /**
+     * GET /team/{id}
+     * @summary route pour voir le détail d'une team
+     * @tag Team
+     * @param {number} id.path.required - team identifiée
+     * @return {Team} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - Team not found' - application/json
+     */
     .get(controllersHandler(userController.getOne));
 
-// route pour les annonces d'une team
 router
     .route('/:id(\\d+)/offers')
+    /**
+     * GET /teams/{id}/offers
+     * @summary route pour voir les annonces d'une team
+     * @tag Offer
+     * @param {number} id.path.required - team identifiée
+     * @return {[Offer]} 200 - success response - application/json
+     * @return {ApiError} 404 - Offers not found - application/json
+     */
     .get(controllersHandler(announcementController.getAll));
 
 // route pour voir le détail d'une annonce
 router
     .route('/:id(\\d+)/offers/:announcementId(\\d+)')
+    /**
+     * GET /teams/{id}/offers/{id}
+     * @summary route pour voir le détail d'une annonce d'une team
+     * @tag Offer
+     * @param {number} id.path.required - team et annonce indentifiées
+     * @return {Offer} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - Offer not found - application/json
+     */
     .get(controllersHandler(announcementController.getOne))
-    // pour modifier l'annonce
+    /**
+     * PATCH /teams/{id}/offers/{id}
+     * @summary route route pour modifier l'annonce
+     * @tag Offer
+     * @param {number} id.path.required - team et annonce indentifiées
+     * @param {InputOffer} req.body.required - infos de l'annonce
+     * @return {Offer} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 401 - No authorization - application/json
+     * @return {ApiError} 404 - Offer not found - application/json
+     */
     .patch(validate('body', editOfferSchema), jwt.isTeam, controllersHandler(announcementController.update))
-    // pour supprimer l'annonce
+    /**
+     * DELETE /teams/{id}/offers/{id}
+     * @summary route pour supprimer une annonce
+     * @tag Offer
+     * @param {number} id.path.required - team et annonce indentifiées
+     * @return {Offer} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 401 - No authorization - application/json
+     * @return {ApiError} 404 - Offer not found - application/json
+     */
     .delete(jwt.isTeam, controllersHandler(announcementController.delete));
 
 module.exports = router;
