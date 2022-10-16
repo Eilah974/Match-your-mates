@@ -26,20 +26,7 @@ const CreateOffer = () => {
 	}
 
 	const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-	// création de l'instance axios
-	/*const instance = axios.create({
-		baseURL: 'https://match-your-mate.herokuapp.com/',
-		data: {
-			username,
-			email,
-			password,
-			passwordConfirm,
-			userType,
-		},
-		headers: {
-			'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-		},
-	});*/
+
 
 	
 	const createOffer = async () => {
@@ -58,9 +45,7 @@ const CreateOffer = () => {
 		});
 	};
 
-	// useEffect(() => {
-	// 	createAccount();
-	// }, []);
+
 
 	// Representation des inputs dans un tableau
 	const inputs = useRef([]);
@@ -74,15 +59,7 @@ const CreateOffer = () => {
 
 	const navigate = useNavigate();
 
-	// const register = (inputs) => {
-	// 	console.log('title:');
-	// 	console.log(inputs.current[0].value);
-	// 	console.log('description:');
-	// 	console.log(inputs.current[1].value);
-	// 	console.log('searchProfile:');
-	// 	console.log(inputs.current[2].value);
 
-	// };
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -107,41 +84,9 @@ const CreateOffer = () => {
 		}
 
 
-		//register(inputs);
-		
-		// création de la requète axios
-		// instance
-		// 	.post('/signup', {
-		// 		username: username,
-		// 		email: email,
-		// 		password: password,
-		// 		passwordConfirm: passwordConfirm,
-		// 		userType: userType,
-				
-		// 	})
-		// 	console.log(instance)
-
-		 	// useEffect(() => {
-		 	// 	axios.post('https://match-your-mate.herokuapp.com/posts', instance.post)
-		 	// 	.then(response => se)
-		 	// 	.catch(error => console.log(error));
-		 	// }, []);
-
-		// 	.then((response) => {
-		// 		console.log(response.data);
-
-		// 		console.log('create success');
-		// 	})
-		// 	.catch((err) => {
-		 		//console.log(err.response.status);
-		// 		console.log(err);
-		// 		console.log('erreur!!!');
-		// 	 });
-		// navigate(`/teams/${userInfo.id}/offers/${offer.id}`);
-		//console.log(inputs);
 	};
 	
-	//  affichage du register form
+	//  affichage du createOffer form
 	return (
 		<div className='registerStyle'>
 			<form onSubmit={handleSubmit} className='row g-3 mt-5 w-25 m-auto'>
