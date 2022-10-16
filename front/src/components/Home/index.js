@@ -6,11 +6,11 @@ const Home = () => {
 	return (
 		<div className='home'>
 			<div className='section-1'>
-				<p>Avez-vous l'âme d'un e-compétiteur ? Si vous cherchez une équipe ou des joueurs mais ne savez pas où chercher, que vous soyez pros ou amateurs et que vous voulez entrer dans la compétion, vous êtes au bon endroit!! </p>
+				<p>As-tu l'âme d'un e-compétiteur ? Si tu cherches une équipe ou des joueurs, que tu sois pros ou amateurs et que tu veux entrer dans la compétion, tu es au bon endroit!! </p>
 
 			</div>
 			<div className='section-2'>
-				<p>Avez-vous l'âme d'un e-compétiteur ? Si vous cherchez une équipe ou des joueurs mais ne savez pas où chercher, que vous soyez pros ou amateurs et que vous voulez entrer dans la compétion, vous êtes au bon endroit!! </p>
+				<p>As-tu l'âme d'un e-compétiteur ? Si tu cherches une équipe ou des joueurs, que tu sois pros ou amateurs et que tu veux entrer dans la compétion, tu es au bon endroit!!  </p>
 				<div className='logo'>
 					<img src='./logomym.png' alt='logo mym' />
 				</div>
