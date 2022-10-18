@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: flex-end;
     height: 50%;
+    width: 100%;
     background-image: url(../../../public/ella-don-fK5Oomnc-Wk-unsplash.jpg);
     background-size: cover;
     background-position: center top;
@@ -22,9 +23,10 @@
     padding: 0;
 }
 .section-1 p {
-    margin: 0 0.5rem 1rem 0.5rem;
+    margin-bottom: 1rem;
     font-weight: bold;
     font-size: 1.1rem;
+    width: 80%;
 }
 
 .section-2 {
