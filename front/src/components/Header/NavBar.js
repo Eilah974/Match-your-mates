@@ -2,10 +2,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './style.scss';
+import './navBar.scss';
+import { useState } from 'react';
 
 const NavBar = ({ userInfoState, setUserInfo }) => {
 	const navigate = useNavigate();
+
+	const [showLinks, setShowLinks] = useState(false);
+
+	const handleShowLinks = () => {
+		setShowLinks(!showLinks)
+	}
 
 	const logOut = (e) => {
 		localStorage.removeItem('userInfo', 'accessToken');
@@ -14,76 +21,44 @@ const NavBar = ({ userInfoState, setUserInfo }) => {
 		navigate('/');
 	};
 	return (
-		<nav className='menu-container'>
-			<input type='checkbox' aria-label='Toggle menu' />
-			{/* <span></span>
-			<span></span>
-			<span></span> */}
-
-			<a className='menu-logo'>
+		<nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
+			<Link to='/' className='navbar__logo'>
 				<img src='./logomym.png' alt='logo mym' />
-			</a>
+				<span>Match Your Mates</span>
+			</Link>
+			<ul className='navbar__links'>
+				<li className='navbar__item slideInDown-1'>
+					<Link to='/players' className='navbar__link '>Players</Link>
+				</li>
+				<li className='navbar__item slideInDown-2'>
+					<Link to='/teams' className='navbar__link '>Teams</Link>
+				</li>
 
-			<div className='menu'>
-				<ul>
-					<li>
-						<button className='navbutton'>
-							<Link to='/'>Home</Link>
-						</button>
-					</li>
-					<li>
-						<button className='navbutton'>
-							<Link to='/players'>Players</Link>
-						</button>
-					</li>
-					<li>
-						<button className='navbutton'>
-							<Link to='/teams'>Teams</Link>
-						</button>
-					</li>
-
-					{/*<li>
-						<button className='navbutton'>
-							<Link to='/teamprofilform'>Team Profil</Link>
-						</button>
-					</li>*/}
-				</ul>
-				<div>
-					<ul>
-						{(!userInfoState && (
-							<div className='connectedbutton'>
-								<li>
-									<button className='navbutton'>
-										<Link to='/login'>Se connecter</Link>
-									</button>
-								</li>
-								<li>
-									<button className='navbutton'>
-										<Link to='/signup'>Créer un compte</Link>
-									</button>
-								</li>
-							</div>
-						)) || (
-							<div className='isloggedbutons'>
-							<p className='wlcmmsg'>Bonjour {userInfoState.username}</p>
-								<li>
-									<button className='navbutton'>
-										<Link to='/profile'>Profil</Link>
-									</button>
-								</li>
-
-								<li>
-									<button className='navbutton'>
-										<Link to='/disconect' onClick={logOut}>
-											Se déconnecter
-										</Link>
-									</button>
-								</li>
-							</div>
-						)}
-					</ul>
-				</div>
-			</div>
+				{(!userInfoState && (
+					<div className='connectedbutton'>
+						<li className='navbar__item slideInDown-3'>
+							<Link to='/login' className='navbar__link '>Login</Link>
+						</li>
+						<li className='navbar__item slideInDown-4'>
+							<Link to='/signup' className='navbar__link'>Signup</Link>
+						</li>
+					</div>
+				)) || (
+					<div className='isloggedbutons'>
+						<li className='navbar__item slideInDown-3'>
+								<Link to='/profile' className='navbar__link'>User Profile</Link>
+						</li>
+						<li className='navbar__item slideInDown-4'>
+							<Link to='/disconect' className='navbar__link' onClick={logOut}>
+								Logout
+							</Link>
+						</li>
+					</div>
+				)}
+			</ul>
+			<button className='navbar__burger' onClick={handleShowLinks}>
+				<span className='burger-bar'></span>
+			</button>
 		</nav>
 	);
 };

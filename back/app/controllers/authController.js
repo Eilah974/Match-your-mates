@@ -7,10 +7,13 @@ const { ApiError } = require('../helpers/errorHandler');
 const token = require('../utils/JWT');
 
 const authController = {
-
+    /**
+     * Méthode pour la soumission du formulaire d'inscription
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     signup: async (req, res) => {
-        console.log(req.body);
-        // Méthode pour la soumission du formulaire d'inscription
         const {
             username, email, password, passwordConfirm, userType,
         } = req.body;
@@ -57,8 +60,13 @@ const authController = {
         return res.status(200).json('Account created, please login');
     },
 
+    /**
+     * Méthode pour s'indentifier
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     login: async (req, res) => {
-        // Méthode pour s'indentifier
         // On va vérifier si l'email et le  mot de passe sont ceux de la BDD
         // Vérification de l'email
         if (!req.body.email || !req.body.password) {

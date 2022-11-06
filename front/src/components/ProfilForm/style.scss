@@ -1,18 +1,19 @@
 .playerRegisterTitleStyle {
-    font-family: 'Bangers', cursive;
-    font-size: 3em;
+    font-size: 1rem;
     text-align: center;
-    color: #1C6DD0;
+    color: #2a0944;
 } 
 
 .playerRegisterTitleForm {
     margin-bottom: 4em;
 }
 
+.registerStyle {
+    flex-grow: 1;
+}
+
+
 .playerRadioStyle {
     text-align: center;
 }
 
-.typo {
-    font-family: 'Bangers', cursive;
-}

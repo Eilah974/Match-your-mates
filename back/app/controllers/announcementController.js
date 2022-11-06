@@ -2,16 +2,28 @@ const { Announcement } = require('../models');
 const { ApiError } = require('../helpers/errorHandler');
 
 const announcementController = {
+
+    /**
+     * méthode pour récupérer toutes les annonces d'une team
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     getAll: async (req, res) => {
-        // méthode pour récupérer toutes les annonces d'une team
         const announcements = await Announcement.findAll({
             where: { user_id: +req.params.id },
+            include: 'team',
         });
         return res.json(announcements);
     },
 
+    /**
+     * Méthode pour récupérer une annonce
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     getOne: async (req, res) => {
-        // Méthode pour récupérer une annonce
         const announcementId = +req.params.announcementId;
         const announcement = await Announcement.findByPk(announcementId, {
             include: 'team',
@@ -24,9 +36,13 @@ const announcementController = {
         return res.json(announcement);
     },
 
+    /**
+     * Méthode pour créer une annonce
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     create: async (req, res) => {
-        // Méthode pour créer une annonce
-
         // On vérifie si les champs sont remplis
         const { title, description, searchProfile } = req.body;
         if (!title) {
@@ -51,6 +67,12 @@ const announcementController = {
         return res.json(newAnnouncement);
     },
 
+    /**
+     * Méhtode pour mise à jour d'une annonce
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     update: async (req, res) => {
         const announcementId = +req.params.announcementId;
         const announcement = await Announcement.findByPk(announcementId, {
@@ -78,8 +100,13 @@ const announcementController = {
         return res.json(announcementSave);
     },
 
+    /**
+     * Méthode pour suppression d'une annonce
+     * @param { object } req Express req object (pas utilisé)
+     * @param { object } res Express res object
+     * @returns réponse en JSON de l'API
+     */
     delete: async (req, res) => {
-        // Méthode pour suppression d'une annonce
         const announcementId = +req.params.announcementId;
         const announcement = await Announcement.findByPk(announcementId, {
             where: { user_id: req.user.id },

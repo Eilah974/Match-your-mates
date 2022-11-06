@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import axios from 'axios';
 import instance from '../../utils/axios';
 import { useEffect, useState } from 'react';
-import './style.scss';
+import './teamList.scss';
 import { NavLink } from 'react-router-dom';
 /*const instance = axios.get({
 	baseURL: 'http://localhost:4000/',
@@ -22,7 +22,7 @@ const TeamList = () => {
 	const getTeams = async () => {
 		instance.get('/teams').then((response) => {
 			const teams = response.data;
-			console.log(teams)
+			//console.log(teams)
 			setData(teams);
 		});
 	};
@@ -32,39 +32,37 @@ const TeamList = () => {
 		getTeams();
 	}, []);
 
-	return (
-		<div className='cardcontainer'>
-			{data.map((team) => (
-				<div className='card' key={team.id}>
-				{team.avatar ?
-					<img
-						src={team.avatar}
-						className='card-img-top'
-						alt='tech'
-					></img>
-				:
-				<img
-						src='./logo-mym-sansbg.png'
-						className='card-img-top'
-						alt='tech'
-					></img>
-				}
-					<div className='card-body'>
-						<p className='card-text'>{team.username}</p>
 
-						<p className='card-text'>{team.rank?.type}</p>
-						
-				
-						<button className='detailbutton'>
-							<NavLink to={`${team.id}`}>
-								<footer className='card-footer'>Voir le détail</footer>
-							</NavLink>
+	return (
+		<div className='card__container'>
+			{data.map((team) => (
+				<div className='team__card' key={team.id}>
+					<div className='team__card-img'>
+						<img
+							src={team.avatar}
+							className='team__card-img-top'
+							alt={team.username}
+						></img>						
+					</div>
+					<div className='card__description'>
+						<div className="card__description-box">
+							<h5 className='card__title '>Team Name:</h5>
+							<p className='card__text'>{team.username}</p>
+						</div>
+						<div className="card__description-box">
+							<h5 className='card__title'>Global Rank:</h5>
+							<p className='card__text'>{team.rank?.type}</p>							
+						</div>							
+						<button className='detail-button'>
+							<NavLink to={`${team.id}`}>Infos</NavLink>
 						</button>
 					</div>
+					
 				</div>
 			))}
 		</div>
 	);
+
 };
 export default TeamList;
 

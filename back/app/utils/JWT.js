@@ -17,7 +17,6 @@ module.exports = {
         const user = {
             id: userData.id,
             username: userData.username,
-            email: userData.email,
             userType: userData.userType,
             ip: userData.ip,
         };
@@ -29,7 +28,7 @@ module.exports = {
     },
 
     // Middleware pour l'obtention du tokken pour des requête à autorisation
-    getAuthTokken: (req, res, next) => {
+    getAuthTokken: (req, _, next) => {
         const authHeader = req.header('authorization');
         const token = authHeader && authHeader.split(' ')[1];
         if (!token) {
@@ -39,6 +38,7 @@ module.exports = {
             if (err) {
                 throw new ApiError('No authorization', { statusCode: 401 });
             }
+
             req.user = user;
             debug(user);
             next();
@@ -56,6 +56,7 @@ module.exports = {
             if (err) {
                 throw new ApiError('No authorization', { statusCode: 401 });
             }
+
             req.user = user;
 
             if (req.user.userType !== 'team') {

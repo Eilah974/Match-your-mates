@@ -1,0 +1,136 @@
+.offers__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 100vw;
+    text-align: justify;
+}
+
+.offers__list__card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+	margin: 1rem auto;
+    padding: 0 10px;
+	width: 70%;
+	background-image: linear-gradient(to top, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+	color: #fff
+}
+
+
+
+
+.offers__list__card-body,
+.team__logo,
+.team__logo-img,
+.offer__button
+{
+    width: 100%;
+}
+
+.offer__button {
+    display: flex;
+    justify-content: center;
+}
+
+.offer__detail__button {
+    margin: 1rem;
+	background-color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 0;
+    width: 90%;
+}
+
+.offer__detail__button a {
+    font-weight: bold;
+	font-size: 1rem;
+	color: #2a0944;
+}
+
+@media screen and (min-width: 767px) {
+    .offers__list__card,
+    .offers__list {
+        flex-direction: row;
+    }
+
+    .offers__list {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+    }
+
+    .offers__list__card {
+        width: 47%;
+        height: 20%;
+        background-image: linear-gradient(to left, #2a0944, #4d0149, #6d0048, #890041, #a10035);
+        margin: 0.5rem 0.7rem;
+
+    }
+
+    .offer__button {
+        width: 25%;
+    }
+
+    .offer__detail__button {
+        padding: 2px;
+    }
+
+    .offer__detail__button a {
+        font-size: 0.9rem;
+    }
+
+    .offers__list__card-body {
+        padding: 0 0.5rem;
+    }
+
+    .team__logo {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .team__logo-img {
+        max-height: 90%;
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .offers__list__card {
+        margin: 0.5rem 0.9rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .offer__button {
+        width: 35%;
+    }
+
+    .offers__list__card {
+        margin: 0.5rem 1.3rem;
+    }    
+}
+
+@media screen and (min-width:1920px) {
+    .offer__detail__button a {
+        font-size: 1.2rem;
+    }
+
+    .offers__list__card {
+        margin: 1rem 1.8rem;
+    }  
+}
+
+@media screen and (min-width:2560px) {
+    .offer__detail__button a {
+        font-size: 1.7rem;
+    }
+
+    .offer__card {
+        margin: 1.5rem 2.3rem;
+    } 
+}

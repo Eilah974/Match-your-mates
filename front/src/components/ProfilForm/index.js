@@ -44,20 +44,7 @@ const ProfileForm = () => {
 	const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
 
-	// création de l'instance axios
-	/*const instance = axios.create({
-		baseURL: 'https://match-your-mate.herokuapp.com/',
-		data: {
-			username,
-			email,
-			password,
-			passwordConfirm,
-			userType,
-		},
-		headers: {
-			'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-		},
-	});*/
+
 
 	
 	const updateProfile = async () => {
@@ -81,9 +68,7 @@ const ProfileForm = () => {
 		});
 	};
 
-	// useEffect(() => {
-	// 	createAccount();
-	// }, []);
+
 
 	// Representation des inputs dans un tableau
 	const inputs = useRef([]);
@@ -110,7 +95,7 @@ const ProfileForm = () => {
 			<div className='registerStyle'>
 				<form onSubmit={handleSubmit} className='row g-3 mt-5 w-25 m-auto'>
 					<div className='registerTitleStyle'>
-						<label className='mt-5'>Formulaire de modification</label>
+						<label className='mt-5'>Modification du profile</label>
 					</div>
 	
 					<input

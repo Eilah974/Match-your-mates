@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import instance from '../../utils/axios';
 import { useParams, NavLink } from 'react-router-dom';
+import './offerList.scss'
 
 const OffersList = () => {
 	const [data, setData] = useState([]);
@@ -9,6 +10,7 @@ const OffersList = () => {
 
 	const getOffersList = async () => {
 		instance.get(`/teams/${id}/offers`).then((response) => {
+			console.log(response.data);
 			setData(response.data);
 		});
 	};
@@ -18,24 +20,27 @@ const OffersList = () => {
 		getOffersList();
 	}, []);
 
+
 	return (
-		<div id="home">
-			<div className='cardcontainer'>
-				{data.map((offer) => (
-					<div className='card' key={offer.id}>
-						<img src='https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456__340.jpg' className='card-img-top' alt='tech'></img>
-						<div className='card-body'>
-							<p className='card-text'>{offer.title}</p>
-							<p className='card-text'>{offer.SearchProfil}</p>
-							<button className='detailbutton'>
-								<NavLink to={`${offer.id}`}>
-									<footer className='card-footer'>Voir le détail</footer>
-								</NavLink>
-							</button>
-						</div>
+		<div className='offers__list'>
+			{data.map((offer) => (
+				<div className='offers__list__card' key={offer.id}>
+					<div className="team__logo">
+						<img src={offer.team.avatar} alt={offer.team.username} className='team__logo-img' />
 					</div>
-				))}
-			</div>
+					<div className='offers__list__card-body'>
+						<p className='card-text'>{offer.title}</p>
+					</div>
+					<div className="offer__button">
+						<button className='offer__detail__button'>
+							<NavLink to={`${offer.id}`}>
+								<footer className='card-footer'>Voir l'annonce</footer>
+							</NavLink>
+						</button>						
+					</div>
+
+				</div>
+			))}
 		</div>
 	);
 };

@@ -3,8 +3,13 @@ const { User } = require('../models');
 const { ApiError } = require('../helpers/errorHandler');
 
 const profileController = {
+    /**
+     * Méthode pour récuper les infos pour le profil
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     getProfile: async (req, res) => {
-        // Méthode pour récuper les infos pour le profil
         const profile = await User.findOne({
             where: { id: req.user.id },
             include: ['rank', 'game_role', 'announcements'],
@@ -16,8 +21,13 @@ const profileController = {
         return res.json(profile);
     },
 
+    /**
+     * Méthode pour mettre à jour son profile
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     update: async (req, res) => {
-        // Méthode pour mettre à jour son profile
         const profile = await User.findOne({
             where: { id: req.user.id },
             include: ['rank', 'game_role', 'announcements'],
@@ -60,8 +70,13 @@ const profileController = {
         return res.json(profileSaved);
     },
 
+    /**
+     * Méthode pour le changement de mot de passe
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     changePassword: async (req, res) => {
-        // Méthode pour le changement de mot de passe
         const profile = await User.findOne({
             where: { id: req.user.id },
         });
@@ -109,6 +124,12 @@ const profileController = {
         return res.status(200).json('Password Changed');
     },
 
+    /**
+     * Méthode pour supprimer un compte
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     delete: async (req, res) => {
         const profile = await User.findOne({
             where: { id: req.user.id },

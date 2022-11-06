@@ -4,9 +4,13 @@ const { User } = require('../models');
 const { ApiError } = require('../helpers/errorHandler');
 
 const searchController = {
-
+    /**
+     * Méthode pour recherche de joueur par nom
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     searchPlayerByName: async (req, res) => {
-        // Méthode pour recherche de joueur par nom
         const {
             username,
         } = req.body;
@@ -27,8 +31,13 @@ const searchController = {
         }
     },
 
+    /**
+     * Méthode pour recherche par rank, role en jeu et disponibilité
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     searchPlayerByCategory: async (req, res) => {
-        // Méthode pour recherche par rank, role en jeu et disponibilité
         const { rank, gameRole, availablity } = req.body;
         if (!rank && !gameRole && !availablity) {
             throw new ApiError('No imput', { statusCode: 400 });
@@ -105,8 +114,13 @@ const searchController = {
         }
     },
 
+    /**
+     * Méthode pour recherche d'équipe
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     searchTeamByName: async (req, res) => {
-        // Méthode pour recherche d'équipe
         const { username } = req.body;
         // Vérification si champs remplis
         if (!username) {
@@ -124,8 +138,13 @@ const searchController = {
         }
     },
 
+    /**
+     * Méthode pour recherche par rang global et recrutement
+     * @param {object} req Express req object (pas utilisé)
+     * @param {object} res Express res object
+     * @returns réponse en JSON de l'API
+     */
     searchTeamByCategory: async (req, res) => {
-        // Méthode pour recherche par rang global et recrutement
         const { globalRank, recruitment } = req.body;
         if (!globalRank && !recruitment) {
             throw new ApiError('No imput', { statusCode: 400 });

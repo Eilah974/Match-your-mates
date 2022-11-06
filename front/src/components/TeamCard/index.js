@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import instance from '../../utils/axios';
 import { useParams, NavLink } from 'react-router-dom';
+import './team.scss';
+
 
 const TeamCard = () => {
 	const [team, setTeam] = useState();
@@ -21,7 +23,7 @@ const TeamCard = () => {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return (
+	/*return (
 		<div id='home'>
 			<div className='cardcontainer'>
 				{team && (
@@ -52,7 +54,54 @@ const TeamCard = () => {
 				)}
 			</div>
 		</div>
-	);
+	);*/
+
+
+	return (
+		<div className='detail__container'>
+			{team && (
+				<div className='team__detail__card' key={team.id}>
+					<div className="detail__card__left">
+						<div className="detail__card-img">
+							<img
+								src={team.avatar}
+								className='team__card-img-top'
+								alt={team.username}
+							></img>						
+						</div>
+						<div className='detail__description-left'>
+							<div className="detail__description-box">
+								<h5 className='detail__title '>Team name:</h5>
+								<p className='detail__text'>{team.username}</p>
+							</div>
+							<div className="detail__description-box">
+								<h5 className='detail__title'>Global Rank:</h5>
+								<p className='detail_text'>{team.rank?.type}</p>							
+							</div>
+							<div className="detail__description-box b1">
+								{team.availablityRecruitment ? 
+										<p className='detail-text'>Recutement: <span className="available">Ouvert</span></p>
+										
+									:
+										<p className='detail-text'>Recrutement: <span className="unavailable">Fermé</span></p>
+								}							
+							</div>							
+						</div>
+					</div>
+					<div className="detail__card__right">
+						<div className="detail__description-box">
+							<h5 className='detail__title '>Team description:</h5>
+							<p className='detail__text'>{team.description}</p>
+						</div>
+						
+						<button className='offers-list-button'>
+							<NavLink to={'offers'}>	Voir les annonces</NavLink>
+						</button>						
+					</div>
+				</div>
+			)}
+		</div>
+	);	
 };
 
 export default TeamCard;

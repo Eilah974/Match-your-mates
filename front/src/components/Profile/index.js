@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import instance from '../../utils/axios';
-import './style.scss'
-import { NavLink } from 'react-router-dom';
+import './profile.scss'
+import { NavLink, useNavigate } from 'react-router-dom';
 
-const Profile = () => {
+const Profile = ({ userInfoState, setUserInfo }) => {
 	const [profile, setProfile] = useState();
 	// const token = localStorage.getItem('accessToken');
 	// const config = {
@@ -13,11 +13,24 @@ const Profile = () => {
 	// };
 	const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
+	const navigate = useNavigate();
+
 	const getProfile = () => {
 		 instance.get('/profile').then((response) => {
 			const userProfile = response.data
 			setProfile(userProfile);
 		});
+	};
+
+	const handleDelete = (e) => {
+		if (!window.confirm('Êtes vous sûr de vouloir supprimer votre compte?')) return;
+		instance.delete('/profile').then((response) => {
+			console.log(response.data);
+		});
+		localStorage.removeItem('userInfo', 'accessToken');
+		setUserInfo(null)
+		e.preventDefault();
+		navigate('/');
 	};
 
 	useEffect(() => {
@@ -27,39 +40,77 @@ const Profile = () => {
 
 
 	if (userInfo.userType === 'player') {
+ 
 		return (
-			<div className='cardcontainer'>
+			<div className='profile__detail__container'>
 				{profile && (
-					<div className='card' key={profile.id}>
-					{profile.avatar ?
-						<img
-							src={profile.avatar}
-							className='card-img-top'
-							alt='tech'
-						></img>
-						:
-						<img
-							src='./astronaute.png'
-							className='card-img-top'
-							alt='tech'
-						></img>
-					}
-						<div className='card-body'>
-							<h6 className='card-text pb-2'><span className='profil'>Username:</span> {profile.username}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>Age:</span> {profile.age}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>Rang:</span> {profile.rank?.type}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>Rôle:</span> {profile.game_role?.type}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>Bio:</span> {profile.description}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>Attente:</span> {profile.search}</h6>
-							{profile.availablityRecruitment ? 
-								<h6 className='card-text pb-2'><span className='profil'>Disponibilité:</span> <span className="true">Disponible</span></h6>
-							:
-								<h6 className='card-text pb-2'><span className='profil'>Disponibilité:</span> <span className="false">Indisponible</span></h6>
-							}
-							
+					<div className='profile__detail__card' key={profile.id}>
+						<div className="profile__detail__infos">
+							<div className="profile__detail__card__left">
+								<div className="profile__detail__card-img">
+									{profile.avatar ?
+										<img
+											src={profile.avatar}
+											className='profile__card-img-top'
+											alt={profile.username}
+										></img>
+										:
+										<img
+											src='./astronaute.png'
+											className='profile__card-img-top'
+											alt='player avatar'
+										></img>
+									}					
+								</div>
+								<div className='profile__detail__description-left'>
+									<div className="profile__detail__description-box">
+										<h5 className='detail__title '>Player Tag:</h5>
+										<p className='detail__text'>{profile.username}</p>
+									</div>
+									<div className="profile__detail__description-box">
+										<h5 className='detail__title'>Age:</h5>
+										<p className='detail__text'>{profile.age}</p>							
+									</div>							
+									<div className="profile__detail__description-box">
+										<h5 className='detail__title '>Role:</h5>
+										<p className='detail__text'>{profile.game_role?.type}</p>							
+									</div>
+									<div className="profile__detail__description-box">
+										<h5 className='detail__title'>Rank:</h5>
+										<p className='detail_text'>{profile.rank?.type}</p>							
+									</div>
+									<div className="profile__detail__description-box b1">
+										{profile.availablityRecruitment ? 
+												<p className='detail-text'>Disponible: <span className="available">Oui</span></p>
+												
+											:
+												<p className='detail-text'>Disponible: <span className="unavailable">Non</span></p>
+										}							
+									</div>							
+								</div>
+							</div>
+							<div className="profile__detail__card__right">
+								<div className="profile__detail__description-box">
+									<h5 className='detail__title '>Bio:</h5>
+									<p className='detail__text'>{profile.description}</p>
+								</div>
+								<div className="profile__detail__description-box b2">
+									<h5 className='detail__title '>Attente:</h5>
+									<p className='detail__text'>{profile.search}</p>
+								</div>
+							</div>
 						</div>
-						<div className="profilBtnContainer">
-							<button  type="button" className="profilBtn"><NavLink to='/profile/edit'>Modifier le profil</NavLink> </button>
+						<div className="player__profile__button">
+							<button className='profile-button'>
+								<NavLink to='/profile/edit'>Editer les infos</NavLink>
+							</button>
+							<button className='profile-button'>
+								<NavLink to='#'>Modifier mot de passe</NavLink>
+							</button>
+							<button className='profile-button'>
+								<NavLink to='/' onClick={handleDelete}>Supprimer compte</NavLink>
+							</button>
+
 						</div>
 					</div>
 				)}
@@ -70,46 +121,73 @@ const Profile = () => {
 	if(userInfo.userType === 'team') {
 
 		return (
-			<div className='cardcontainer'>
+			<div className='detail__container'>
 				{profile && (
-					<div className='card' key={profile.id}>
-					{profile.avatar ?
-						<img
-							src={profile.avatar}
-							className='card-img-top'
-							alt='tech'
-						></img>
-
-						:
-
-						<img
-							src='./astronaute1.png'
-							className='card-img-top'
-							alt='tech'
-						></img>
-					}
-						<div className='card-body'>
-							<h6 className='card-text pb-2'><span className='profil'>Nom de team:</span> {profile.username}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>Rang global:</span> {profile.rank?.type}</h6>
-							<h6 className='card-text pb-2'><span className='profil'>description:</span> {profile.description}</h6>
-							{profile.availablityRecruitment ? 
-								<h6 className='card-text pb-2'><span className='profil'>Recrutement:</span> <span className="true">Ouvert</span></h6>
-							:
-								<h6 className='card-text pb-2'><span className='profil'>Recrutement:</span> <span className="false">Fermé</span></h6>
-							}						
+					<div className='profile__team__detail__card' key={profile.id}>
+						<div className="profile__detail__infos">
+							<div className="profile__detail__card__left">
+								<div className="profile__detail__card-img">
+										{profile.avatar ?
+											<img
+												src={profile.avatar}
+												className='profile__card-img-top'
+												alt={profile.username}
+											></img>
+											:
+											<img
+												src='./astronaute1.png'
+												className='profile__card-img-top'
+												alt='team avatar'
+											></img>
+										}					
+								</div>
+								<div className='profile__detail__description-left'>
+									<div className="profile__detail__description-box">
+										<h5 className='detail__title '>Team name:</h5>
+										<p className='detail__text'>{profile.username}</p>
+									</div>
+									<div className="profile__detail__description-box">
+										<h5 className='detail__title'>Global Rank:</h5>
+										<p className='detail_text'>{profile.rank?.type}</p>							
+									</div>
+									<div className="profile__detail__description-box b1">
+										{profile.availablityRecruitment ? 
+												<p className='detail-text'>Recutement: <span className="available">Ouvert</span></p>
+												
+											:
+												<p className='detail-text'>Recrutement: <span className="unavailable">Fermé</span></p>
+										}							
+									</div>							
+								</div>
+							</div>
+							<div className="profile__detail__card__right">
+								<div className="profile__detail__description-box">
+									<h5 className='detail__title '>Team description:</h5>
+									<p className='detail__text'>{profile.description}</p>
+								</div>
+							</div>
 						</div>
 
-						<div className="profilBtnContainer">
-							<button  type="button" className="profilBtn"><NavLink to='/profile/edit'>Modifier le profil</NavLink> </button>
+						<div className="player__profile__button">
+							<button className='profile-button'>
+								<NavLink to='/profile/edit'>Editer les infos</NavLink>
+							</button>
+							<button className='profile-button'>
+								<NavLink to='/profile/createOffer'>Créer une annonce</NavLink>
+							</button>
+							<button className='profile-button'>
+								<NavLink to='#'>Modifier mot de passe</NavLink>
+							</button>
+							<button className='profile-button'>
+								<NavLink to='/' onClick={handleDelete}>Supprimer compte</NavLink>
+							</button>
 						</div>
-						<div className="profilBtnContainer">
-							<button  type="button" className="profilBtn"><NavLink to='/profile/createOffer'>Créer une annonce</NavLink> </button>
-						</div>						
 					</div>
-
+					
 				)}
 			</div>
-		);
+		);			
+		
 	};
 	
 

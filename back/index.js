@@ -12,7 +12,7 @@ const app = express();
 
 // Retrait de la restriction CORS
 app.use(cors({
-    origin: '*',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
 }));
 
